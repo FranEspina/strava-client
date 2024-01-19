@@ -9,11 +9,13 @@ type returnUseAthlete = {
 }
 
 export function useAthlete () : returnUseAthlete {
-
-  const [athlete, setAthlete] = useState<Athlete>()
+  const [athlete, setAthlete] = useState<string>('')
   const [errorMessage, setErrorMessage] = useState<string>('')
-  const tokenStr = useStravaStore(state => state.token)
-
+  
+  
+  const user = useStravaStore(state => state.user)
+  
+ 
   useEffect(() => {
     getAthleteAsync(tokenStr).then(
       result => {
