@@ -1,6 +1,5 @@
 import axios from "axios"
 import { Athlete } from "../models/AthleteModel";
-import { useStravaStore } from "../store/strava";
 
 
 type getResultResponse = {
@@ -9,7 +8,7 @@ type getResultResponse = {
   message: string
 }
 
-export async function getAthleteAsync (tokenStr) : Promise<getResultResponse> {
+export async function getAthleteAsync (tokenStr: string) : Promise<getResultResponse> {
 
   const urlAthlete = 'https://www.strava.com/api/v3/athlete'
   
