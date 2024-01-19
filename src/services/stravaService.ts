@@ -1,5 +1,6 @@
 import axios from "axios"
 import { Athlete } from "../models/AthleteModel";
+import { useStravaStore } from "../store/strava";
 
 
 type getResultResponse = {
@@ -8,13 +9,10 @@ type getResultResponse = {
   message: string
 }
 
-// TEMPORAL TOKEN VARIABLE. SIX HOUR EXPIRE. TODO MOVE TO SECRETS !!!
-const tokenStr = 'ca7075e72bdd18f461aaf53e4c9384efcf41e820' 
-
-export async function getAthleteAsync () : Promise<getResultResponse> {
+export async function getAthleteAsync (tokenStr) : Promise<getResultResponse> {
 
   const urlAthlete = 'https://www.strava.com/api/v3/athlete'
-
+  
   let result : getResultResponse = {
     message: '', 
     ok: false
