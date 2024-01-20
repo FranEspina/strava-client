@@ -7,6 +7,7 @@ export function NavBar() {
       <Link to="/">Inicio</Link>
       <Link to="/activities">Actividades</Link>
       <Link to="/about">Acerca de</Link>
+      <Link to="/login">inicio sesión</Link>
     </div>
   </>
 }

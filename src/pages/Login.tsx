@@ -1,12 +1,11 @@
-import { useStravaUrl } from '../hooks/useStravaUrl'
-import { useStravaStore } from '../store/strava'
+import { LogoutButton } from '../components/LogoutButton.tsx'
+import { useStravaUrl } from '../hooks/useStravaUrl.ts'
 import './Login.css'
 
 export function Login () {
   const { userAuthorizationUrl } = useStravaUrl()
 
-  const pruebasEstado = useStravaStore(state => state.test)
-
+  
   return (
     <>
       <hgroup>
@@ -16,7 +15,7 @@ export function Login () {
         <a className='button-login' href={userAuthorizationUrl}>
           Login With Strava
         </a>
-        <p>{pruebasEstado}</p>
+        <LogoutButton></LogoutButton>
       </div>
     </>
   )

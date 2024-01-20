@@ -8,7 +8,6 @@ export function useStravaAccessToken () {
     return useStravaStore(state => state.user?.strava_data.access_token)
   } 
 
-  const response = 
 
 
 }

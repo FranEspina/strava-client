@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom"
+import { FooterLogStore } from "../components/FooterLogStore.tsx"
 
 export const Layout = () => {
   return (
@@ -7,6 +8,7 @@ export const Layout = () => {
       <main>
         <Outlet />
       </main>
+      <FooterLogStore></FooterLogStore>
     </div>
   )
 }
