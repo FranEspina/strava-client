@@ -13,16 +13,22 @@ export function useAthlete () : returnUseAthlete {
   const [errorMessage, setErrorMessage] = useState<string>('')
 
   const user = useStravaStore(state => state.user)
+  const athleteStored = useStravaStore(state => state.athlete)
  
   useEffect(() => {
     if (!user) return 
-    getAthleteAsync(user.strava_data.access_token).then(
-      result => {
-        console.log(result.value)
-        result.ok ? setAthlete(result.value) : setErrorMessage(result.message)
-      }
-    )
-  }, [user])
+    if (athleteStored){
+      setAthlete(athleteStored) 
+    }
+    else{
+      getAthleteAsync(user.strava_data.access_token).then(
+        result => {
+          console.log(result.value)
+          result.ok ? setAthlete(result.value) : setErrorMessage(result.message)
+        }
+      )
+    }
+  }, [user, athleteStored])
 
   return {athlete, error: errorMessage}
 }

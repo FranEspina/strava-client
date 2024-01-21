@@ -1,4 +1,5 @@
 import { Athlete } from "../models/AthleteModel"
+import './AthleteInfo.css'
 
 type AthleteProps = {
   value: Athlete
@@ -16,7 +17,7 @@ export function AthleteInfo ({ value } : AthleteProps) {
       ? <h3>Cargando ...</h3> 
       : <div className="athlete-info">
           <div className="left">
-            <img src={value?.profile} alt="" />
+            <img className="image-athlete" src={value?.profile} alt="" />
           </div>
           <div className="right">
             <h3>{`${value?.firstname} ${value?.lastname}`}</h3>

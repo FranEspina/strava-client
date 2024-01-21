@@ -1,4 +1,3 @@
-import { LogoutButton } from '../components/LogoutButton.tsx'
 import { useStravaUrl } from '../hooks/useStravaUrl.ts'
 import './Login.css'
 
@@ -15,7 +14,6 @@ export function Login () {
         <a className='button-login' href={userAuthorizationUrl}>
           Login With Strava
         </a>
-        <LogoutButton></LogoutButton>
       </div>
     </>
   )

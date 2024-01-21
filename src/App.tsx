@@ -6,6 +6,8 @@ import { Activities } from './pages/Activities.tsx'
 import { Layout } from './pages/Layout.tsx'
 import { Error } from './pages/Error.tsx';
 import { Login } from './pages/Login.tsx'
+import { NotFound } from './pages/NotFound.tsx'
+import { About } from './pages/About.tsx'
 import { StravaRegister } from './pages/StravaRegister.tsx';
 
 function App() {
@@ -29,11 +31,3 @@ function App() {
 }
 
 export default App
-
-function About() {
-  return <><h1>Página de la aplicación</h1></>;
-}
-
-function NotFound() {
-  return <><h1>Página no encontrada</h1></>;
-}

@@ -1,10 +1,12 @@
 import './Home.css'
 import { useStravaStore } from '../store/strava'
 import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { refreshUserFromStravaAsync } from '../services/apiService.ts'
 import { LogoutButton } from '../components/LogoutButton.tsx'
 import { RefreshTokenButton } from '../components/RefreshTokenButton.tsx'
+import { AthleteInfo } from '../components/AthleteInfo.tsx'
+import { useAthlete } from '../hooks/useAthlete.ts'
 
 export function Home () {
 
@@ -16,6 +18,8 @@ export function Home () {
   const refresh_token = useStravaStore(state => state.user?.strava_data.refresh_token)
   const storeRefreshToken = useStravaStore(state => state.storeRefreshToken)
   const isAccessTokenExpired = useStravaStore(state => state.isAccessTokenExpired)
+
+  const {athlete} = useAthlete()
   
   console.log('dentro home')
   useEffect(() => {
@@ -48,8 +52,13 @@ export function Home () {
           : <p>Para acceder inicie sesión con strava</p>
         }
       </div>
-      <LogoutButton></LogoutButton>
-      <RefreshTokenButton></RefreshTokenButton>
+
+      {isUserLogged && <AthleteInfo value={athlete} /> }
+      {isUserLogged && <LogoutButton />}
+      {isUserLogged && <RefreshTokenButton />}
+      {!isUserLogged && <Link to="/login">inicio sesión</Link>
+ }
+
     </>
   )
 }

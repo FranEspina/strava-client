@@ -1,0 +1,20 @@
+.athlete-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.athlete-info .right{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.image-athlete{
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+}
