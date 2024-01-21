@@ -4,13 +4,11 @@ import { User } from '../models/UserModel.ts'
 import { persist, devtools } from 'zustand/middleware'
 
 interface AppState {
-  token: string
   athlete: Athlete
   user: User | undefined
   isUserLogged: boolean
   storeAthlete: (athlete: Athlete) => void
   storeUser: (user: User) => void
-  storeToken: (token : string) => void
   logOut: () => void, 
   isAccessTokenExpired: () => boolean
   storeRefreshToken: (strava_data) => void
@@ -22,11 +20,8 @@ export const useStravaStore = create<AppState>()(
       token: '', 
       user: undefined, 
       athlete: {id: 0}, 
-      storeToken: (token : string) => {
-        set({token})
-      }, 
       logOut: () => {
-        set({token: '', athlete: {id: 0}, user: undefined, isUserLogged: false})
+        set({athlete: {id: 0}, user: undefined, isUserLogged: false})
       }, 
       storeAthlete: (athlete: Athlete) => {
         set({athlete})
@@ -46,6 +41,7 @@ export const useStravaStore = create<AppState>()(
       storeRefreshToken: (strava_data) => {
         const newUser = structuredClone(get().user)
         if (newUser) {
+          console.log(strava_data)
           newUser.strava_data.access_token = strava_data.access_token    
           newUser.strava_data.expires_at = strava_data.expires_at
           newUser.strava_data.expires_in = strava_data.expires_in

@@ -4,7 +4,7 @@ import { useStravaStore } from "../store/strava.ts";
 import { useNavigate } from "react-router-dom";
 
 
-export function RefreshTokenButton ({force: boolean}) {
+export function RefreshTokenButton () {
   
   const storeRefreshToken = useStravaStore(state => state.storeRefreshToken)
   const strava_id = useStravaStore(state => state.user?.strava_id)
@@ -12,18 +12,27 @@ export function RefreshTokenButton ({force: boolean}) {
   const navigate = useNavigate()
 
   const handleRefreshClick = () => {
-    try
-    {
-      refreshUserFromStravaAsync(strava_id, refresh_token)
-      .then(response => {
-        storeRefreshToken(response.strava_data)
-        console.log('token refrescado')})
+
+    if (!strava_id) {
+      console.log('Se esperaba un id de strava');
+      return navigate("/error")
     }
-    catch (error) {
+
+    if (!refresh_token) {
+      console.log('Se esperaba un token para refrescar');
+      return navigate("/error")
+    }
+
+    refreshUserFromStravaAsync(strava_id, refresh_token)
+    .then(response => {
+      console.log(response)
+      storeRefreshToken(response.user.strava_data)
+      console.log('token refrescado')})
+    .catch(error => {
       console.log(error);
       navigate("/error")
-    }
-  }
+    })
+ }
 
   return <Button onClick={handleRefreshClick}>Refrescar Strava Token</Button>
 }

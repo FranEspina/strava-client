@@ -6,7 +6,7 @@ import { Activities } from './pages/Activities.tsx'
 import { Layout } from './pages/Layout.tsx'
 import { Error } from './pages/Error.tsx';
 import { Login } from './pages/Login.tsx'
-import { StravaState } from './pages/StravaState.tsx';
+import { StravaRegister } from './pages/StravaRegister.tsx';
 
 function App() {
 
@@ -22,7 +22,7 @@ function App() {
           <Route path="error" Component={Error} /> 
           <Route path="*" Component={NotFound} />
         </Route>
-        <Route path="/strava" Component={StravaState}/>
+        <Route path="/strava" Component={StravaRegister}/>
       </Routes>
     </>
   )
