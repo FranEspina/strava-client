@@ -9,13 +9,18 @@ export function Activities () {
 
   const { activities, error, currentPage, moveNextPage, movePreviousPage } = useActivities()
   const pageSize = useStravaStore(state => state.pageSize)
-  
+  const isLoading = useStravaStore(state => state.isAsyncTaskLoading)
+
   const nextHandleClick = () => {
-    moveNextPage()
+    if (!isLoading){
+      moveNextPage()
+    }
   }
 
   const previousHandleClick = () => {
-    movePreviousPage()
+    if (!isLoading){
+      movePreviousPage()
+    }
   }
   
   return (
@@ -31,27 +36,24 @@ export function Activities () {
       <table className='table-activities'>
         <thead>
         <tr>
-          <th>name</th>
-          <th>distance</th>
-          <th>elapsed_time</th>
-          <th>moving_time</th>
-          <th>type</th>
-          <th>workout_type</th>
+          <th>Nombre</th>
+          <th>Distancia</th>
+          <th>Tiempo</th>
+          <th>En Movimiento</th>
+          <th>Tipo</th>
         </tr>
         </thead>
-        <Loading />
-        {(!activities || activities.length === 0) && 
+        {!isLoading && (!activities || activities.length === 0) && 
           <p>No existen datos que mostrar :( </p>}
         {activities && activities.length !== 0 && 
           activities.map(a => {
             return (
               <tr key={a.id}>
-                <td>{a.name}</td>
-                <td>{a.distance}</td>
-                <td>{a.elapsed_time}</td>
-                <td>{a.moving_time}</td>
-                <td>{a.type}</td>
-                <td>{a.workout_type}</td>
+                <td className='left-align column-name-activity'>{a.name}</td>
+                <td className='right-align'>{(a.distance / 1000).toFixed(2) } Kms</td>
+                <td className='right-align'>{a.elapsed_time}</td>
+                <td className='right-align'>{a.moving_time}</td>
+                <td className='right-align'>{a.type}</td>
               </tr>)
       })}  
       </table>
@@ -59,6 +61,10 @@ export function Activities () {
         <Button onClick={previousHandleClick}>Anterior</Button>
         <Button onClick={nextHandleClick}>Siguiente</Button>
       </div>
+      <div className='loading-activities'>
+        <Loading />
+      </div>
+      
 
     </section>
   )

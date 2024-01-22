@@ -5,6 +5,10 @@
   align-items: start;
 }
 
+.page-layout{
+  width: 100%;
+}
+
 .footer-layout{
   flex-grow: auto;
 }
