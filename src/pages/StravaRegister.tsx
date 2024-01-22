@@ -2,13 +2,14 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { useStravaStore } from "../store/strava.ts";
 import { useEffect, useState } from "react";
 import { createUserFromStravaAsync } from "../services/apiService.ts";
-import { Box, CircularProgress } from "@mui/material";
 import './StravaRegister.css'
+import { Loading } from "../components/Loading.tsx";
 
 export function StravaRegister () {
 
   const navigate = useNavigate()
-  const [loading, setLoading] = useState(false)
+  const storeIsAsyncTaskLoading = useStravaStore(state => state.storeIsAsyncTaskLoading)
+  const isAsyncTaskLoading = useStravaStore(state => state.isAsyncTaskLoading)
   
   const storeUser = useStravaStore(state => state.storeUser)
   const storeAthlete = useStravaStore(state => state.storeAthlete)
@@ -20,8 +21,6 @@ export function StravaRegister () {
   })
 
   useEffect(() => {
-
-    setLoading(true)
 
     const authorizationError  = searchParms.get('error')
     if (authorizationError) {
@@ -37,6 +36,7 @@ export function StravaRegister () {
     }
 
     const createUser = async (token: string) => {
+      storeIsAsyncTaskLoading(true)
       const response = await createUserFromStravaAsync(token)
       storeUser(response.user)
       storeAthlete(response.athlete)
@@ -49,20 +49,15 @@ export function StravaRegister () {
       console.log(`Error creando usuario: ${error}`)
       return navigate("/error")
     })
-    .finally(() => setLoading(false))
+    .finally(() => storeIsAsyncTaskLoading(false))
 
-  }, [searchParms, storeUser, storeAthlete, navigate]);
+  }, [storeIsAsyncTaskLoading, searchParms, storeUser, storeAthlete, navigate]);
 
   return <header>
     <h1>Recibida autorización de Strava</h1>
-    {loading && <h2>Guardando datos ...</h2> }
-    {loading && <p>Espere por favor</p>}
-    {loading ? 
-      <Box> 
-        <CircularProgress />
-      </Box> 
-      : null
-    }
+    {isAsyncTaskLoading && <h2>Guardando datos ...</h2> }
+    {isAsyncTaskLoading && <p>Espere por favor</p>}
+    <Loading />
 
   </header>
 

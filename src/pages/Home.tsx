@@ -8,6 +8,7 @@ import { RefreshTokenButton } from '../components/RefreshTokenButton.tsx'
 import { AthleteInfo } from '../components/AthleteInfo.tsx'
 import { useAthlete } from '../hooks/useAthlete.ts'
 import { Box, CircularProgress } from '@mui/material'
+import { DeauthorizationButton } from '../components/DeauthorizationButton.tsx'
 
 export function Home () {
 
@@ -57,6 +58,7 @@ export function Home () {
       {isUserLogged && <AthleteInfo value={athlete} /> }
       {isUserLogged && <LogoutButton />}
       {isUserLogged && <RefreshTokenButton />}
+      {isUserLogged && <DeauthorizationButton />}
       {!isUserLogged && <Link to="/login">inicio sesión</Link>}
     </>
   )
