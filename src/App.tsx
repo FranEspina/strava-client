@@ -10,7 +10,9 @@ import { NotFound } from './pages/NotFound.tsx'
 import { About } from './pages/About.tsx'
 import { StravaRegister } from './pages/StravaRegister.tsx';
 
+
 function App() {
+
 
   return (
     <>

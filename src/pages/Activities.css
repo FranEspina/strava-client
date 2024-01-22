@@ -27,30 +27,3 @@
   align-self: center;
 }
 
-/* .table-activities{
-  width: 100%;
-} */
-
-.table-activities thead{
-  height: 60px;
-} 
-
-.left-align {
-  text-align: left;
-}
-
-.right-align {
-  text-align: right;
-}
-
-.center-align {
-  text-align: center;
-}
-
-td {
-  width: 100px;
-}
-
-.column-name-activity{
-  width: 350px;
-}

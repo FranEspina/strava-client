@@ -3,7 +3,6 @@ import { Athlete } from "../models/AthleteModel.ts"
 import { User } from '../models/UserModel.ts'
 import { persist, devtools } from 'zustand/middleware'
 import { deauthorizeStravaAsync } from "../services/stravaService.ts"
-
 interface AppState {
   athlete: Athlete
   user: User | undefined
@@ -20,6 +19,7 @@ interface AppState {
   storeRefreshToken: (strava_data) => void
   deauthorizeStravaAccess: () => void
 }
+
 
 export const useStravaStore = create<AppState>()(
   devtools(persist((set, get) => {

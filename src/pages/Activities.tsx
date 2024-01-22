@@ -3,7 +3,7 @@ import { LogoStrava } from '../components/LogoStrava'
 import { useActivities } from '../hooks/useActivities.ts'
 import { Loading } from '../components/Loading.tsx'
 import { useStravaStore } from '../store/strava.ts'
-import { Button } from '@mui/material'
+import { Button, Container, Grid, Paper, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material'
 
 export function Activities () {
 
@@ -22,6 +22,18 @@ export function Activities () {
       movePreviousPage()
     }
   }
+
+ function time_convert(num)
+ { 
+  // Calculate the number of hours by dividing num by 60 and rounding down
+  const hours = Math.floor(num / 60 / 60) ;  
+
+  // Calculate the remaining minutes by taking the remainder when dividing num by 60
+  const minutes = Math.floor((num / 60) % 60);
+
+  // Return the result as a string in the format "hours:minutes"
+  return `${hours}h ${minutes} min`         
+}
   
   return (
     <section className='activities-container'>
@@ -33,30 +45,34 @@ export function Activities () {
       <p>{error}</p>
       <p>Tamaño de página: {pageSize}</p>
       <p>Página actual: {currentPage}</p>
-      <table className='table-activities'>
-        <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Distancia</th>
-          <th>Tiempo</th>
-          <th>En Movimiento</th>
-          <th>Tipo</th>
-        </tr>
-        </thead>
-        {!isLoading && (!activities || activities.length === 0) && 
-          <p>No existen datos que mostrar :( </p>}
-        {activities && activities.length !== 0 && 
-          activities.map(a => {
-            return (
-              <tr key={a.id}>
-                <td className='left-align column-name-activity'>{a.name}</td>
-                <td className='right-align'>{(a.distance / 1000).toFixed(2) } Kms</td>
-                <td className='right-align'>{a.elapsed_time}</td>
-                <td className='right-align'>{a.moving_time}</td>
-                <td className='right-align'>{a.type}</td>
-              </tr>)
-      })}  
-      </table>
+      <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+      <Grid item xs={12}>
+        <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', bgcolor: 'darkgray' }}>        
+          <Table size="small" className="table-activities">
+            <TableHead>
+              <TableCell>Nombre</TableCell>
+                <TableCell sx={{textAlign: 'right'}}>Distancia</TableCell>
+                <TableCell sx={{textAlign: 'right'}}>Tiempo</TableCell>
+                <TableCell sx={{textAlign: 'right'}}>En Movimiento</TableCell>
+                <TableCell>Tipo</TableCell>
+            </TableHead>
+            <TableBody>
+            {activities && activities.length !== 0 && 
+              activities.map(a => {
+                return (
+                  <TableRow key={a.id}>
+                    <TableCell sx={{minWidth: 200 }}>{a.name}</TableCell>
+                    <TableCell sx={{textAlign: 'right'}}>{(a.distance / 1000).toFixed(2) } Kms</TableCell>
+                    <TableCell sx={{textAlign: 'right'}}>{time_convert(a.elapsed_time)}</TableCell>
+                    <TableCell sx={{textAlign: 'right'}}>{time_convert(a.moving_time)}</TableCell>
+                    <TableCell >{a.type}</TableCell>
+                  </TableRow >)
+            })}  
+            </TableBody>
+          </Table>
+        </Paper>
+      </Grid>
+      </Container>
       <div className='table-buttons'>
         <Button onClick={previousHandleClick}>Anterior</Button>
         <Button onClick={nextHandleClick}>Siguiente</Button>
