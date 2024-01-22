@@ -9,7 +9,7 @@ Totalmente en pruebas y no funcional de momento
 ## Dependencias
 React + TypeScript + Vite
 Zustand 
-Material UI
+Material UI (mui)
 axios
 dotenv
 ```

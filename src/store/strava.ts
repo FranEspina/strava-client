@@ -7,6 +7,8 @@ interface AppState {
   athlete: Athlete
   user: User | undefined
   isUserLogged: boolean
+  showStatusFooter: boolean
+  setShowStatusFooter: (value: boolean) => void
   storeAthlete: (athlete: Athlete) => void
   storeUser: (user: User) => void
   logOut: () => void, 
@@ -20,9 +22,11 @@ export const useStravaStore = create<AppState>()(
       token: '', 
       user: undefined, 
       athlete: {id: 0}, 
+      showStatusFooter: false, 
       logOut: () => {
         set({athlete: {id: 0}, user: undefined, isUserLogged: false})
       }, 
+      setShowStatusFooter: (value: boolean) => set({showStatusFooter: value}), 
       storeAthlete: (athlete: Athlete) => {
         set({athlete})
       }, 

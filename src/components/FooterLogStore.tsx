@@ -1,5 +1,4 @@
 import { useStravaStore } from "../store/strava"
-import './FooterLogStore.css'
 
 export function FooterLogStore () {
 
@@ -7,7 +6,7 @@ export function FooterLogStore () {
 
   const isUserLogged = useStravaStore(state => state.isUserLogged)
 
-  return <div className="footer-log-container">
+  return <div>
     <h3>Estado de la página</h3>
     <h4>Nombre athleta</h4>
     <p>{estado.athlete.firstname} {estado.athlete.lastname}</p>
@@ -19,8 +18,6 @@ export function FooterLogStore () {
     <p>{estado.user?.strava_data?.refresh_token}</p>
     <h4>Usuario logado</h4>
     <p>{isUserLogged ? 'Si' : 'No'}</p>
-    
-    
   </div>
 }
 

@@ -2,6 +2,8 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { useStravaStore } from "../store/strava.ts";
 import { useEffect, useState } from "react";
 import { createUserFromStravaAsync } from "../services/apiService.ts";
+import { Box, CircularProgress } from "@mui/material";
+import './StravaRegister.css'
 
 export function StravaRegister () {
 
@@ -47,16 +49,21 @@ export function StravaRegister () {
       console.log(`Error creando usuario: ${error}`)
       return navigate("/error")
     })
-    .finally(() => setLoading(false)
-    )
-
+    .finally(() => setLoading(false))
 
   }, [searchParms, storeUser, storeAthlete, navigate]);
 
-  return <>
-    <h1>Llamada de Strava</h1>
-    {loading && <h2>Cargando ...</h2> }
+  return <header>
+    <h1>Recibida autorización de Strava</h1>
+    {loading && <h2>Guardando datos ...</h2> }
     {loading && <p>Espere por favor</p>}
-  </>
+    {loading ? 
+      <Box> 
+        <CircularProgress />
+      </Box> 
+      : null
+    }
+
+  </header>
 
 }

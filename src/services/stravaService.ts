@@ -48,7 +48,8 @@ export async function getAthleteAsync (tokenStr: string) : Promise<getResultResp
 export function getUserAuthorizationUrl () : string  {
   const clientID = import.meta.env.VITE_STRAVA_APP_CLIENT_ID
   const redirect_uri = import.meta.env.VITE_STRAVA_URL_EXCHANGE_TOKEN
-  const urlbase = `http://www.strava.com/oauth/authorize?client_id=${clientID}&response_type=code&redirect_uri=${redirect_uri}&approval_prompt=force&scope=read`
+  const scopes = 'read,activity:read'
+  const urlbase = `http://www.strava.com/oauth/authorize?client_id=${clientID}&response_type=code&redirect_uri=${redirect_uri}&approval_prompt=force&scope=${scopes}`
   return urlbase
 }
 

@@ -1,3 +1,4 @@
+import { Box, CircularProgress } from "@mui/material"
 import { Athlete } from "../models/AthleteModel"
 import './AthleteInfo.css'
 
@@ -14,7 +15,10 @@ export function AthleteInfo ({ value } : AthleteProps) {
 
   return (
      ( !value ) 
-      ? <h3>Cargando ...</h3> 
+      ?  
+        <Box sx={{ display: 'flex' }}>
+          <CircularProgress />
+        </Box>
       : <div className="athlete-info">
           <div className="left">
             <img className="image-athlete" src={value?.profile} alt="" />

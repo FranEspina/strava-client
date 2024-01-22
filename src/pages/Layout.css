@@ -1,0 +1,10 @@
+.main-layout{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+.footer-layout{
+  flex-grow: auto;
+}

@@ -5,15 +5,36 @@
   box-sizing: border-box;
   max-width: 1080px;
   margin: auto;
+  height: 100%;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+body{
+  height: 100%;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #242424;
+    background-color: rgba(255, 255, 255, 0.87);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+  }
 }
 
 * {
