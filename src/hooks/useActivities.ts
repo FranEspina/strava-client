@@ -5,28 +5,53 @@ import { StravaActivity } from "../models/StravaActivityModel.ts";
 import { useNavigate } from "react-router-dom";
 
 type returnUseActivities = {
-  activities: [StravaActivity], 
-  error: string
+  activities: Array<StravaActivity>, 
+  error: string, 
+  currentPage: number, 
+  moveNextPage: () => void, 
+  movePreviousPage: () => void
+
 }
 
 export function useActivities () : returnUseActivities {
   const navigate = useNavigate()
-  const [activities, setActivities] = useState<[StravaActivity]>([{}])
+  const [activities, setActivities] = useState<Array<StravaActivity>>([])
   const [errorMessage, setErrorMessage] = useState<string>('')
 
   const isUserLogged = useStravaStore(state => state.isUserLogged)
   const access_token = useStravaStore(state => state.user?.strava_data.access_token)
+  const pageSize = useStravaStore(state => state.pageSize)
+
+  const [currentPage, setCurrentPage] = useState(1)
+
 
   const storeIsAsyncTaskLoading = useStravaStore(state => state.storeIsAsyncTaskLoading)
+
+  const moveNextPage = () => {
+    setCurrentPage(currentPage + 1)
+  }
+
+  const movePreviousPage = () => {
+    if (currentPage === 1) return 
+    setCurrentPage(currentPage - 1)
+  }
  
   useEffect(() => {
     if (!isUserLogged || !access_token) return navigate("/home")
 
     storeIsAsyncTaskLoading(true)
-    getActivitiesAsync(access_token).then(
+    getActivitiesAsync({tokenStr: access_token, page: currentPage, perPage: pageSize}).then(
       result => {
-        console.log(result.value)
-        result.ok ? setActivities(result.value as [StravaActivity]) : setErrorMessage(result.message)
+        if (result.ok){
+          const list = result.value as Array<StravaActivity>
+          if (list.length === 0){
+            setCurrentPage(currentPage - 1)
+          } else {
+            setActivities(list)
+          }
+        } else{
+          setErrorMessage(result.message)
+        }
       }).catch(error => {
         console.log(error)
         return navigate("/error")
@@ -34,9 +59,9 @@ export function useActivities () : returnUseActivities {
       .finally(() => storeIsAsyncTaskLoading(false))
 
 
-  }, [storeIsAsyncTaskLoading, navigate, isUserLogged, access_token, setActivities])
+  }, [pageSize, currentPage, storeIsAsyncTaskLoading, navigate, isUserLogged, access_token, setActivities])
 
-  return {activities, error: errorMessage}
+  return {activities, error: errorMessage, currentPage, moveNextPage, movePreviousPage}
 }
 
 

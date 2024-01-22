@@ -10,6 +10,7 @@ interface AppState {
   isUserLogged: boolean
   showStatusFooter: boolean
   isAsyncTaskLoading: boolean, 
+  pageSize: number, 
   storeIsAsyncTaskLoading: (value: boolean) => void
   setShowStatusFooter: (value: boolean) => void
   storeAthlete: (athlete: Athlete) => void
@@ -28,6 +29,7 @@ export const useStravaStore = create<AppState>()(
       athlete: {id: 0}, 
       showStatusFooter: false, 
       isAsyncTaskLoading: false, 
+      pageSize: 10, 
       storeIsAsyncTaskLoading: (value: boolean) => set({isAsyncTaskLoading: value}), 
       logOut: () => {
         set({athlete: {id: 0}, user: undefined, isUserLogged: false})
@@ -72,12 +74,11 @@ export const useStravaStore = create<AppState>()(
             get().logOut()
           } else{
             console.log(response.message)
-          }
+          }s
         })
         .catch(error => console.log(error))
         .finally(() => get().storeIsAsyncTaskLoading(false))
-      }
-      
+      },
     }
   }, {
     name: 'strava-info'

@@ -93,13 +93,13 @@ export async function deauthorizeStravaAsync (tokenStr: string) : Promise<getRes
   }
 }
 
-export async function getActivitiesAsync(tokenStr: string) : Promise<getResultResponse<[StravaActivity]>> {
+export async function getActivitiesAsync({tokenStr, page, perPage}: {tokenStr: string, page: number, perPage: number}) : Promise<getResultResponse<Array<StravaActivity>>> {
   
   const urlApiStrava = 'https://www.strava.com/api/v3/athlete/activities'
   
-  const result : getResultResponse<[StravaActivity]> = {
+  const result : getResultResponse<Array<StravaActivity>> = {
     message: '', 
-    value: [{}], 
+    value: [], 
     ok: false
   }
 
@@ -111,8 +111,8 @@ export async function getActivitiesAsync(tokenStr: string) : Promise<getResultRe
         withCredentials: false,
         params: {
           access_token: tokenStr,
-          page: 1, 
-          perPage: 50, 
+          page: page, 
+          per_page: perPage, 
         },
       })
       
