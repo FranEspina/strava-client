@@ -19,6 +19,7 @@ export function useActivities () : returnUseActivities {
   const [errorMessage, setErrorMessage] = useState<string>('')
 
   const isUserLogged = useStravaStore(state => state.isUserLogged)
+  const user = useStravaStore(state => state.user)
   const access_token = useStravaStore(state => state.user?.strava_data.access_token)
   const pageSize = useStravaStore(state => state.pageSize)
 
@@ -37,7 +38,8 @@ export function useActivities () : returnUseActivities {
   }
  
   useEffect(() => {
-    if (!isUserLogged || !access_token) return navigate("/home")
+
+    if (!isUserLogged || !access_token) return navigate("/login")
 
     storeIsAsyncTaskLoading(true)
     getActivitiesAsync({tokenStr: access_token, page: currentPage, perPage: pageSize}).then(

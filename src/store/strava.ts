@@ -54,11 +54,13 @@ export const useStravaStore = create<AppState>()(
         const newUser = structuredClone(get().user)
         if (newUser) {
           console.log(strava_data)
-          newUser.strava_data.access_token = strava_data.access_token    
-          newUser.strava_data.expires_at = strava_data.expires_at
-          newUser.strava_data.expires_in = strava_data.expires_in
-          newUser.strava_data.refresh_token = strava_data.refresh_token
-          newUser.strava_data.token_type = strava_data.token_type    
+          if (strava_data.access_token) {
+            newUser.strava_data.access_token = strava_data.access_token    
+            newUser.strava_data.expires_at = strava_data.expires_at
+            newUser.strava_data.expires_in = strava_data.expires_in
+            newUser.strava_data.refresh_token = strava_data.refresh_token
+            newUser.strava_data.token_type = strava_data.token_type    
+          }
         }
         set({user: newUser})
         set({isUserLogged: true})
