@@ -4,6 +4,8 @@ import { useActivities } from '../hooks/useActivities.ts'
 import { Loading } from '../components/Loading.tsx'
 import { useStravaStore } from '../store/strava.ts'
 import { Button, Container, Grid, Paper, Table, TableBody, TableCell, TableHead, TableRow, ThemeProvider, createTheme } from '@mui/material'
+import { kmConvert, meterConvert, timeConvert } from '../services/formatService.ts'
+import { Link } from 'react-router-dom'
 
 export function Activities () {
 
@@ -21,18 +23,6 @@ export function Activities () {
     if (!isLoading){
       movePreviousPage()
     }
-  }
-
-  function time_convert(num)
-  { 
-    // Calculate the number of hours by dividing num by 60 and rounding down
-    const hours = Math.floor(num / 60 / 60) ;  
-
-    // Calculate the remaining minutes by taking the remainder when dividing num by 60
-    const minutes = Math.floor((num / 60) % 60);
-
-    // Return the result as a string in the format "hours:minutes"
-    return `${hours}h ${minutes} min`         
   }
 
   const theme = createTheme({
@@ -61,6 +51,7 @@ export function Activities () {
                 <TableCell sx={{textAlign: 'right'}}>Distancia</TableCell>
                 <TableCell sx={{textAlign: 'right'}}>Tiempo</TableCell>
                 <TableCell sx={{textAlign: 'right'}}>En Movimiento</TableCell>
+                <TableCell sx={{textAlign: 'right'}}>Ascenso</TableCell>
                 <TableCell>Tipo</TableCell>
             </TableHead>
             <TableBody>
@@ -68,10 +59,13 @@ export function Activities () {
               activities.map(a => {
                 return (
                   <TableRow key={a.id}>
-                    <TableCell sx={{minWidth: 200 }}>{a.name}</TableCell>
-                    <TableCell sx={{textAlign: 'right'}}>{(a.distance / 1000).toFixed(2) } Kms</TableCell>
-                    <TableCell sx={{textAlign: 'right'}}>{time_convert(a.elapsed_time)}</TableCell>
-                    <TableCell sx={{textAlign: 'right'}}>{time_convert(a.moving_time)}</TableCell>
+                    <TableCell sx={{minWidth: 200 }}>
+                      <Link to={`/activities/${a.id}`}>{a.name}</Link>  
+                    </TableCell>
+                    <TableCell sx={{textAlign: 'right'}}>{kmConvert(a.distance)}</TableCell>
+                    <TableCell sx={{textAlign: 'right'}}>{timeConvert(a.elapsed_time)}</TableCell>
+                    <TableCell sx={{textAlign: 'right'}}>{timeConvert(a.moving_time)}</TableCell>
+                    <TableCell sx={{textAlign: 'right'}}>{meterConvert(a.total_elevation_gain)}</TableCell>
                     <TableCell >{a.type}</TableCell>
                   </TableRow >)
             })}  
