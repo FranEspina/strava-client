@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { refreshUserFromStravaAsync } from '../services/apiService.ts'
 import { LoggedOptions } from '../components/LogOptions.tsx'
+import { Button } from '@mui/material'
 
 
 export function Home () {
@@ -25,10 +26,12 @@ export function Home () {
         console.log('token expirado')
         console.log(`antes llamada refreshUserFromStravaAsync('${strava_id}', '${refresh_token}')`)
         refreshUserFromStravaAsync(strava_id, refresh_token)
-        .then(response => {
+        .then(response => {          
           storeRefreshToken(response)
-          console.log('token refrescado')})
+          console.log('token refrescado')
+        })
         .catch(error => {
+          console.log('Error refrescando token')
           console.log(error)
           navigate("/error")
         })
@@ -50,8 +53,8 @@ export function Home () {
         }
       </div>
 
-      {!isUserLogged && <Link to="/login">inicio sesión</Link>}
-      {isUserLogged && <LoggedOptions sx={{mt: 10}} />}  
+      {!isUserLogged && <Button variant="contained" color="error" component={Link} to="/login" sx={{mt: 10}}>inicio sesión</Button>}
+      {isUserLogged && <LoggedOptions sx={{mt: 5}} />}  
 
     </>
   )
