@@ -9,6 +9,7 @@ import { Login } from './pages/Login.tsx'
 import { NotFound } from './pages/NotFound.tsx'
 import { About } from './pages/About.tsx'
 import { StravaRegister } from './pages/StravaRegister.tsx';
+import { Activity } from './pages/Activity.tsx';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path='login' Component={Login} />
           <Route path="about" element={<About />} /> // Dos formas de renderizar una ruta
           <Route path="activities" Component={Activities} /> 
+          <Route path="activities/:id" Component={Activity} />
           <Route path="error" Component={Error} /> 
           <Route path="*" Component={NotFound} />
         </Route>
