@@ -1,0 +1,583 @@
+{
+  "resource_state": 3,
+  "athlete": {
+      "id": 6051612,
+      "resource_state": 1
+  },
+  "name": "Bicicleta de montaña por la tarde",
+  "distance": 10097.9,
+  "moving_time": 1946,
+  "elapsed_time": 1946,
+  "total_elevation_gain": 174,
+  "type": "Ride",
+  "sport_type": "MountainBikeRide",
+  "workout_type": null,
+  "id": 10583205356,
+  "start_date": "2024-01-18T16:35:29Z",
+  "start_date_local": "2024-01-18T17:35:29Z",
+  "timezone": "(GMT+01:00) Europe/Madrid",
+  "utc_offset": 3600,
+  "location_city": null,
+  "location_state": null,
+  "location_country": "Spain",
+  "achievement_count": 0,
+  "kudos_count": 1,
+  "comment_count": 0,
+  "athlete_count": 1,
+  "photo_count": 0,
+  "map": {
+      "id": "a10583205356",
+      "polyline": "cre|E~~m_@KIMSI[Da@FQHM\\S^KXQLKl@_AZ[XSn@YbBg@d@Wf@k@r@uA@WO{@}@_Da@iBGq@@y@Jk@Vq@f@aAFQAEEGOBYH[Pw@j@kApAOLSF[AeCkAOSEMG[O{GKiCE[Mg@Sg@QYm@k@k@Wm@Oy@@aAHa@Ec@Si@_@WYUO]Kg@Bq@b@e@LKFKT@P^x@XxA\\bAnCjHVzADp@?bAK`ASx@qAtCe@dBOt@}@~FOzAAjAFnARnAt@jCNhA@dAIlA_@xAKPm@`AORc@\\o@~@_AjB_AnCMRULILCP@HFPZh@`@pBJr@Dz@Gz@Kf@[n@qCrDs@hA]v@WfAE`@E|@DnALjAb@hCNhAJzBAxAMpCIpC?lA@j@Ah@BLHNH@H?d@e@`Ac@r@g@RWR_@t@aCXk@Ze@Z[`@[d@Ud@K`@B\\LJHPZVz@N^XTZFP@t@Qj@QfAg@VE^?RFPJLR^`B\\x@X`@PNh@Z`@J`@Dn@?h@Ch@Kv@_@ZUj@s@FEXCHIBK?SGQMEQDGPMv@SZo@f@i@Ve@JaADu@Ac@Ks@a@a@e@[k@Mc@Ia@GqAQiIKiAMa@W[MKQGa@CS@WH]VORuApCsAtCOTIFKB}@?s@Pq@\\q@l@Yb@Ud@s@xB[r@ORe@Zw@ZUFKAMIMQIYAeBVaIA}AK}A{@}FGsABcARqAPm@Tk@b@s@~@iAzAsBP[Vm@Lw@?s@OwA_@_C?YJyAt@aCb@gAr@mArA_B`@k@Xs@V}@JgA@u@Cm@QkAm@wBOu@O_B?eABo@RiBpAiH`@qAjAkCR{@JaABm@Am@Gm@Km@a@yAiCyGW{@Mk@CS@i@Pw@PWVOLCZAZHNJ~@|@^Nf@FnAAl@@j@FTFd@VNN\\b@R`@Nd@Nx@^zKDVHTVX|B`APDJ@RGRM~@kATU^Wf@YH@FNANg@~@M`@Mr@@x@Hl@b@|AdAhE?Xg@xAa@p@i@Za@RoBn@e@Z[\\_@n@WV]Pq@NONUh@@j@FVLRP@DI",
+      "resource_state": 3,
+      "summary_polyline": "cge|Ezbm_@Ae@F{@Pq@v@}A@QEGOBYHm@\\e@^kApAOLSF[AOGiB}@KEOSK[C]MkGMsCMo@Wq@Wa@YWq@a@o@O_A?aAHe@E_@SsAgAa@Mg@Bq@b@e@LKFKT@P^x@XxAlDnJVzADp@?bAK`ASx@qAtCe@dBOt@}@~FOzAAjAFnARnAt@jCNhA@dAIlA_@xAKPm@`AORc@\\o@~@_AjB_AnCMRULILCP@HFPZh@`@pBJr@Dz@Gz@Kf@[n@qCrDs@hA]v@WfAE`@E|@DnALjAb@hCNhAJzBAxAMpCIpC?lA@j@Ah@BLHNH@H?d@e@`Ac@r@g@RWR_@t@aCXk@Ze@Z[`@[d@Ud@K`@B\\LJHPZVz@N^XTZFP@t@Qj@QfAg@VE^?RFPJLR^`B\\x@X`@PNh@Z`@J`@Dn@?h@Ch@Kv@_@ZUj@s@FEXCHIBK?SGQMEQDGPMv@SZo@f@i@Ve@JaADu@Ac@Ks@a@a@e@[k@Mc@Ia@GqAQiIKiAMa@W[MKQGa@CS@WH]VORuApCsAtCOTIFKB}@?s@Pq@\\q@l@Yb@Ud@q@rB]x@ORe@Zw@ZUFKAMIQYEQAuADkBPeF?mAMmB{@}FGsABcAHq@Lo@b@iAb@s@~@iAzAsBP[Vm@Lw@?s@SgB[oB?YJyAz@mC\\{@r@mAhAqAj@y@`@gANi@JgA@u@Cm@QkAm@wBOu@O_B?eABo@RiBpAiH`@qA~@sBRm@P{@HaA?m@Eo@Iq@Kg@e@yA_CcGW{@Mk@CS@i@Hg@P_@^WZGL@ZHNJ~@|@^Nf@FnAAbABj@Ld@VNNf@p@Xx@Jd@JrBTlHBZL^NRPJzB|@TDRGRM~@kAXY~@k@HAHL?Ng@bAM`@Mr@@x@"
+  },
+  "trainer": false,
+  "commute": false,
+  "manual": false,
+  "private": false,
+  "visibility": "everyone",
+  "flagged": false,
+  "gear_id": "b5472584",
+  "start_latlng": [
+      36.242424538359046,
+      -5.3196739219129086
+  ],
+  "end_latlng": [
+      36.2423853110522,
+      -5.319689512252808
+  ],
+  "average_speed": 5.189,
+  "max_speed": 12.6,
+  "average_cadence": 76.3,
+  "average_temp": 17,
+  "average_watts": 141.1,
+  "kilojoules": 274.6,
+  "device_watts": false,
+  "has_heartrate": true,
+  "average_heartrate": 114.2,
+  "max_heartrate": 172,
+  "heartrate_opt_out": false,
+  "display_hide_heartrate_option": true,
+  "elev_high": 140.8,
+  "elev_low": 25.6,
+  "upload_id": 11322796353,
+  "upload_id_str": "11322796353",
+  "external_id": "garmin_ping_316033915800",
+  "from_accepted_tag": false,
+  "pr_count": 0,
+  "total_photo_count": 0,
+  "has_kudoed": false,
+  "suffer_score": 21,
+  "description": "-- myWindsock Report --\r\nWeather Impact: 0.7%\r\nHeadwind: 59% @ 2.8-8.1m/s\r\nLongest Headwind: 12m 37s\r\nAir Speed: 19.8km/h\r\nTemp: 17.8-18.7°C\r\nPrecip: 0% @ 0 Inch/hr\r\n-- END --",
+  "calories": 230,
+  "perceived_exertion": null,
+  "prefer_perceived_exertion": null,
+  "segment_efforts": [
+      {
+          "id": 3183111387469811000,
+          "resource_state": 2,
+          "name": "Av. Del Golf (Full)",
+          "activity": {
+              "id": 10583205356,
+              "visibility": "everyone",
+              "resource_state": 1
+          },
+          "athlete": {
+              "id": 6051612,
+              "resource_state": 1
+          },
+          "elapsed_time": 716,
+          "moving_time": 716,
+          "start_date": "2024-01-18T16:37:44Z",
+          "start_date_local": "2024-01-18T17:37:44Z",
+          "distance": 2978.1,
+          "start_index": 132,
+          "end_index": 848,
+          "average_cadence": 80.9,
+          "device_watts": false,
+          "average_heartrate": 146.4,
+          "max_heartrate": 172,
+          "segment": {
+              "id": 18904571,
+              "resource_state": 2,
+              "name": "Av. Del Golf (Full)",
+              "activity_type": "Ride",
+              "distance": 2978.1,
+              "average_grade": 2.9,
+              "maximum_grade": 11.4,
+              "elevation_high": 114.6,
+              "elevation_low": 28.1,
+              "start_latlng": [
+                  36.242275,
+                  -5.314367
+              ],
+              "end_latlng": [
+                  36.247998,
+                  -5.334233
+              ],
+              "elevation_profile": null,
+              "climb_category": 0,
+              "city": "San Roque",
+              "state": "Andalucía",
+              "country": "Spain",
+              "private": false,
+              "hazardous": false,
+              "starred": false
+          },
+          "pr_rank": null,
+          "achievements": [],
+          "visibility": "everyone",
+          "kom_rank": null,
+          "hidden": false
+      },
+      {
+          "id": 3183111387467930000,
+          "resource_state": 2,
+          "name": "Subida La Marina Alcaidesa",
+          "activity": {
+              "id": 10583205356,
+              "visibility": "everyone",
+              "resource_state": 1
+          },
+          "athlete": {
+              "id": 6051612,
+              "resource_state": 1
+          },
+          "elapsed_time": 155,
+          "moving_time": 155,
+          "start_date": "2024-01-18T16:38:02Z",
+          "start_date_local": "2024-01-18T17:38:02Z",
+          "distance": 537.1,
+          "start_index": 150,
+          "end_index": 305,
+          "average_cadence": 69.1,
+          "device_watts": false,
+          "average_heartrate": 135.8,
+          "max_heartrate": 157,
+          "segment": {
+              "id": 8293814,
+              "resource_state": 2,
+              "name": "Subida La Marina Alcaidesa",
+              "activity_type": "Ride",
+              "distance": 537.1,
+              "average_grade": 7.3,
+              "maximum_grade": 15.8,
+              "elevation_high": 62.1,
+              "elevation_low": 22.7,
+              "start_latlng": [
+                  36.242434,
+                  -5.313103
+              ],
+              "end_latlng": [
+                  36.245807,
+                  -5.310776
+              ],
+              "elevation_profile": null,
+              "climb_category": 0,
+              "city": "San Roque",
+              "state": "Andalusia",
+              "country": "Spain",
+              "private": false,
+              "hazardous": false,
+              "starred": false
+          },
+          "pr_rank": null,
+          "achievements": [],
+          "visibility": "everyone",
+          "kom_rank": null,
+          "hidden": false
+      },
+      {
+          "id": 3183111387467501000,
+          "resource_state": 2,
+          "name": "Av. Del Golf Climb",
+          "activity": {
+              "id": 10583205356,
+              "visibility": "everyone",
+              "resource_state": 1
+          },
+          "athlete": {
+              "id": 6051612,
+              "resource_state": 1
+          },
+          "elapsed_time": 335,
+          "moving_time": 335,
+          "start_date": "2024-01-18T16:40:46Z",
+          "start_date_local": "2024-01-18T17:40:46Z",
+          "distance": 1290.3,
+          "start_index": 314,
+          "end_index": 649,
+          "average_cadence": 80,
+          "device_watts": false,
+          "average_heartrate": 153.4,
+          "max_heartrate": 172,
+          "segment": {
+              "id": 12916698,
+              "resource_state": 2,
+              "name": "Av. Del Golf Climb",
+              "activity_type": "Ride",
+              "distance": 1290.3,
+              "average_grade": 3.3,
+              "maximum_grade": 7.8,
+              "elevation_high": 96.8,
+              "elevation_low": 51.6,
+              "start_latlng": [
+                  36.24569,
+                  -5.31109
+              ],
+              "end_latlng": [
+                  36.246923,
+                  -5.324105
+              ],
+              "elevation_profile": null,
+              "climb_category": 0,
+              "city": "San Roque",
+              "state": "Andalucía",
+              "country": "Spain",
+              "private": false,
+              "hazardous": false,
+              "starred": false
+          },
+          "pr_rank": null,
+          "achievements": [],
+          "visibility": "everyone",
+          "kom_rank": null,
+          "hidden": false
+      },
+      {
+          "id": 3183111387467854300,
+          "resource_state": 2,
+          "name": "Subida Alcaidesa Suites",
+          "activity": {
+              "id": 10583205356,
+              "visibility": "everyone",
+              "resource_state": 1
+          },
+          "athlete": {
+              "id": 6051612,
+              "resource_state": 1
+          },
+          "elapsed_time": 146,
+          "moving_time": 146,
+          "start_date": "2024-01-18T16:50:15Z",
+          "start_date_local": "2024-01-18T17:50:15Z",
+          "distance": 431.4,
+          "start_index": 883,
+          "end_index": 1029,
+          "average_cadence": 59.7,
+          "device_watts": false,
+          "average_heartrate": 109.1,
+          "max_heartrate": 142,
+          "segment": {
+              "id": 8199991,
+              "resource_state": 2,
+              "name": "Subida Alcaidesa Suites",
+              "activity_type": "Ride",
+              "distance": 431.4,
+              "average_grade": 7.7,
+              "maximum_grade": 16.2,
+              "elevation_high": 136.3,
+              "elevation_low": 102.5,
+              "start_latlng": [
+                  36.246292,
+                  -5.332402
+              ],
+              "end_latlng": [
+                  36.243116,
+                  -5.333029
+              ],
+              "elevation_profile": null,
+              "climb_category": 0,
+              "city": "San Roque",
+              "state": "Andalusia",
+              "country": "Spain",
+              "private": false,
+              "hazardous": false,
+              "starred": false
+          },
+          "pr_rank": null,
+          "achievements": [],
+          "visibility": "everyone",
+          "kom_rank": null,
+          "hidden": false
+      }
+  ],
+  "splits_metric": [
+      {
+          "distance": 1003.5,
+          "elapsed_time": 142,
+          "elevation_difference": -41.2,
+          "moving_time": 142,
+          "split": 1,
+          "average_speed": 7.07,
+          "average_grade_adjusted_speed": null,
+          "average_heartrate": 80.30281690140845,
+          "pace_zone": 0
+      },
+      {
+          "distance": 997.3,
+          "elapsed_time": 270,
+          "elevation_difference": 44.6,
+          "moving_time": 270,
+          "split": 2,
+          "average_speed": 3.69,
+          "average_grade_adjusted_speed": null,
+          "average_heartrate": 132.96666666666667,
+          "pace_zone": 0
+      },
+      {
+          "distance": 999.6,
+          "elapsed_time": 259,
+          "elevation_difference": 36.4,
+          "moving_time": 259,
+          "split": 3,
+          "average_speed": 3.86,
+          "average_grade_adjusted_speed": null,
+          "average_heartrate": 161.1196911196911,
+          "pace_zone": 0
+      },
+      {
+          "distance": 1005.5,
+          "elapsed_time": 199,
+          "elevation_difference": 3.8,
+          "moving_time": 199,
+          "split": 4,
+          "average_speed": 5.05,
+          "average_grade_adjusted_speed": null,
+          "average_heartrate": 148.39698492462313,
+          "pace_zone": 0
+      },
+      {
+          "distance": 998,
+          "elapsed_time": 263,
+          "elevation_difference": 30.4,
+          "moving_time": 263,
+          "split": 5,
+          "average_speed": 3.79,
+          "average_grade_adjusted_speed": null,
+          "average_heartrate": 123.73384030418251,
+          "pace_zone": 0
+      },
+      {
+          "distance": 996.8,
+          "elapsed_time": 117,
+          "elevation_difference": -35.2,
+          "moving_time": 117,
+          "split": 6,
+          "average_speed": 8.52,
+          "average_grade_adjusted_speed": null,
+          "average_heartrate": 121.38461538461539,
+          "pace_zone": 0
+      },
+      {
+          "distance": 999.7,
+          "elapsed_time": 172,
+          "elevation_difference": 0.8,
+          "moving_time": 172,
+          "split": 7,
+          "average_speed": 5.81,
+          "average_grade_adjusted_speed": null,
+          "average_heartrate": 72.69767441860465,
+          "pace_zone": 0
+      },
+      {
+          "distance": 1003,
+          "elapsed_time": 115,
+          "elevation_difference": -26.4,
+          "moving_time": 115,
+          "split": 8,
+          "average_speed": 8.72,
+          "average_grade_adjusted_speed": null,
+          "average_heartrate": 80.22608695652174,
+          "pace_zone": 0
+      },
+      {
+          "distance": 1002.3,
+          "elapsed_time": 99,
+          "elevation_difference": -47.4,
+          "moving_time": 99,
+          "split": 9,
+          "average_speed": 10.12,
+          "average_grade_adjusted_speed": null,
+          "average_heartrate": 86,
+          "pace_zone": 0
+      },
+      {
+          "distance": 997,
+          "elapsed_time": 269,
+          "elevation_difference": 24.4,
+          "moving_time": 269,
+          "split": 10,
+          "average_speed": 3.71,
+          "average_grade_adjusted_speed": null,
+          "average_heartrate": 86,
+          "pace_zone": 0
+      },
+      {
+          "distance": 97.6,
+          "elapsed_time": 41,
+          "elevation_difference": 9.4,
+          "moving_time": 41,
+          "split": 11,
+          "average_speed": 2.38,
+          "average_grade_adjusted_speed": null,
+          "average_heartrate": 86,
+          "pace_zone": 0
+      }
+  ],
+  "splits_standard": [
+      {
+          "distance": 1609.6,
+          "elapsed_time": 310,
+          "elevation_difference": -8.6,
+          "moving_time": 310,
+          "split": 1,
+          "average_speed": 5.19,
+          "average_grade_adjusted_speed": null,
+          "average_heartrate": 108.14838709677419,
+          "pace_zone": 0
+      },
+      {
+          "distance": 1613.5,
+          "elapsed_time": 404,
+          "elevation_difference": 47.4,
+          "moving_time": 404,
+          "split": 2,
+          "average_speed": 3.99,
+          "average_grade_adjusted_speed": null,
+          "average_heartrate": 152.6361386138614,
+          "pace_zone": 0
+      },
+      {
+          "distance": 1606.1,
+          "elapsed_time": 380,
+          "elevation_difference": 32.8,
+          "moving_time": 380,
+          "split": 3,
+          "average_speed": 4.23,
+          "average_grade_adjusted_speed": null,
+          "average_heartrate": 132.16052631578947,
+          "pace_zone": 0
+      },
+      {
+          "distance": 1613.7,
+          "elapsed_time": 256,
+          "elevation_difference": -28.6,
+          "moving_time": 256,
+          "split": 4,
+          "average_speed": 6.3,
+          "average_grade_adjusted_speed": null,
+          "average_heartrate": 112.015625,
+          "pace_zone": 0
+      },
+      {
+          "distance": 1613.8,
+          "elapsed_time": 192,
+          "elevation_difference": -32,
+          "moving_time": 192,
+          "split": 5,
+          "average_speed": 8.41,
+          "average_grade_adjusted_speed": null,
+          "average_heartrate": 69.69270833333333,
+          "pace_zone": 0
+      },
+      {
+          "distance": 1601.2,
+          "elapsed_time": 273,
+          "elevation_difference": -28.6,
+          "moving_time": 273,
+          "split": 6,
+          "average_speed": 5.87,
+          "average_grade_adjusted_speed": null,
+          "average_heartrate": 86,
+          "pace_zone": 0
+      },
+      {
+          "distance": 442.4,
+          "elapsed_time": 131,
+          "elevation_difference": 17.2,
+          "moving_time": 131,
+          "split": 7,
+          "average_speed": 3.38,
+          "average_grade_adjusted_speed": null,
+          "average_heartrate": 86,
+          "pace_zone": 0
+      }
+  ],
+  "laps": [
+      {
+          "id": 36555497518,
+          "resource_state": 2,
+          "name": "Lap 1",
+          "activity": {
+              "id": 10583205356,
+              "visibility": "everyone",
+              "resource_state": 1
+          },
+          "athlete": {
+              "id": 6051612,
+              "resource_state": 1
+          },
+          "elapsed_time": 1942,
+          "moving_time": 1942,
+          "start_date": "2024-01-18T16:35:29Z",
+          "start_date_local": "2024-01-18T17:35:29Z",
+          "distance": 10100.3,
+          "average_speed": 5.2,
+          "max_speed": 12.6,
+          "lap_index": 1,
+          "split": 1,
+          "start_index": 0,
+          "end_index": 1688,
+          "total_elevation_gain": 175,
+          "average_cadence": 76.3,
+          "device_watts": false,
+          "average_watts": 141.1,
+          "average_heartrate": 114.2,
+          "max_heartrate": 172
+      }
+  ],
+  "gear": {
+      "id": "b5472584",
+      "primary": false,
+      "name": "Orbea",
+      "nickname": "Orbea",
+      "resource_state": 2,
+      "retired": false,
+      "distance": 12698048,
+      "converted_distance": 12698
+  },
+  "photos": {
+      "primary": null,
+      "count": 0
+  },
+  "stats_visibility": [
+      {
+          "type": "heart_rate",
+          "visibility": "everyone"
+      },
+      {
+          "type": "pace",
+          "visibility": "everyone"
+      },
+      {
+          "type": "power",
+          "visibility": "everyone"
+      },
+      {
+          "type": "speed",
+          "visibility": "everyone"
+      },
+      {
+          "type": "calories",
+          "visibility": "everyone"
+      }
+  ],
+  "hide_from_home": false,
+  "device_name": "Garmin Edge 1030 Plus",
+  "embed_token": "ac15d49dec2a81998bef9863ed16e4b5b4f3930b",
+  "available_zones": [
+      "heartrate",
+      "power"
+  ]
+}

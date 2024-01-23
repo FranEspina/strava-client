@@ -40,11 +40,11 @@ export function Activities () {
         <Table size="small" className="table-activities">
           <TableHead>
             <TableCell>Nombre</TableCell>
-              <TableCell sx={{textAlign: 'right'}}>Distancia</TableCell>
-              <TableCell sx={{textAlign: 'right'}}>Tiempo</TableCell>
-              <TableCell sx={{textAlign: 'right'}}>En Movimiento</TableCell>
-              <TableCell sx={{textAlign: 'right'}}>Ascenso</TableCell>
-              <TableCell>Tipo</TableCell>
+            <TableCell sx={{textAlign: 'right'}}>Distancia</TableCell>
+            <TableCell sx={{textAlign: 'right'}}>Tiempo</TableCell>
+            <TableCell sx={{textAlign: 'right'}}>En Movimiento</TableCell>
+            <TableCell sx={{textAlign: 'right'}}>Ascenso</TableCell>
+            <TableCell>Tipo</TableCell>
           </TableHead>
           <TableBody>
           {activities && activities.length !== 0 && 

@@ -130,3 +130,49 @@ export async function getActivitiesAsync({tokenStr, page, perPage}: {tokenStr: s
     return result
   }
 }
+
+export async function getActivityAsync (tokenStr: string, id: string) : Promise<getResultResponse<StravaActivity>> {
+
+  const urlApiStrava = `https://www.strava.com/api/v3/activities/${id}`
+
+  let result : getResultResponse<StravaActivity> = {
+    message: '', 
+    ok: false
+  }
+
+  try{
+    const response = await axios(
+      {
+        method: 'get',
+        url: urlApiStrava,
+        withCredentials: false,
+        params: {
+          access_token: tokenStr,
+        },
+      })
+
+      console.log(response)
+
+      return {
+        ok: true, 
+        value: response.data,
+        message: ''
+      }
+
+                          
+  } catch (error) {
+    let message
+    if (error instanceof Error) message = error.message
+    else message = String(error)
+
+    console.log(message)
+
+    result = 
+    {
+      ok: false, 
+      value: {id: 0}, 
+      message: message, 
+    }
+    return result
+  }
+}
