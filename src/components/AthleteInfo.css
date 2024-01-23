@@ -1,20 +1,20 @@
 .athlete-info{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 }
 
 .athlete-info .right{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: center;
 }
 
 .image-athlete{
-  height: 60px;
-  width: 60px;
+  height: 160px;
+  width: 160px;
   border-radius: 100%;
 }

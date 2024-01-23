@@ -3,11 +3,8 @@ import { useStravaStore } from '../store/strava'
 import { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { refreshUserFromStravaAsync } from '../services/apiService.ts'
-import { LogoutButton } from '../components/LogoutButton.tsx'
-import { RefreshTokenButton } from '../components/RefreshTokenButton.tsx'
-import { AthleteInfo } from '../components/AthleteInfo.tsx'
-import { useAthlete } from '../hooks/useAthlete.ts'
-import { DeauthorizationButton } from '../components/DeauthorizationButton.tsx'
+import { LoggedOptions } from '../components/LogOptions.tsx'
+
 
 export function Home () {
 
@@ -39,7 +36,6 @@ export function Home () {
     }
   }, [navigate, isUserLogged, isAccessTokenExpired, storeRefreshToken, refresh_token, strava_id]);
     
-  const {athlete} = useAthlete()
 
   return (
     <>
@@ -54,11 +50,9 @@ export function Home () {
         }
       </div>
 
-      {isUserLogged && <AthleteInfo value={athlete} /> }
-      {isUserLogged && <LogoutButton />}
-      {isUserLogged && <RefreshTokenButton />}
-      {isUserLogged && <DeauthorizationButton />}
       {!isUserLogged && <Link to="/login">inicio sesión</Link>}
+      {isUserLogged && <LoggedOptions sx={{mt: 10}} />}  
+
     </>
   )
 }

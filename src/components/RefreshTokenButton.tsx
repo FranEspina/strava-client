@@ -4,7 +4,7 @@ import { useStravaStore } from "../store/strava.ts";
 import { useNavigate } from "react-router-dom";
 
 
-export function RefreshTokenButton () {
+export function RefreshTokenButton (props) {
   
   const storeRefreshToken = useStravaStore(state => state.storeRefreshToken)
   const strava_id = useStravaStore(state => state.user?.strava_id)
@@ -34,5 +34,5 @@ export function RefreshTokenButton () {
     })
  }
 
-  return <Button onClick={handleRefreshClick}>Refrescar Strava Token</Button>
+  return <Button onClick={handleRefreshClick}  variant={props.variant} sx={{...props.sx}}>Refrescar Strava Token</Button>
 }
