@@ -5,11 +5,3 @@
   text-align: center;
   height: 100%;
 }
-
-button{
-  min-width: 200px;
-  height: 35px;
-  border: solid 1px transparent;
-  border-radius: 10px;
-  cursor: pointer;
-}
