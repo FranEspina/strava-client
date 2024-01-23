@@ -9,26 +9,34 @@ type returnUseAthlete = {
 }
 
 export function useAthlete () : returnUseAthlete {
-  const [athlete, setAthlete] = useState<Athlete>()
+  const [athlete, setAthlete] = useState<Athlete>({id: 0})
   const [errorMessage, setErrorMessage] = useState<string>('')
-
-  const user = useStravaStore(state => state.user)
+  const access_token = useStravaStore(state => state.user?.strava_data?.access_token)
   const athleteStored = useStravaStore(state => state.athlete)
  
   useEffect(() => {
-    if (!user) return 
+    if (!access_token) return
+     
     if (athleteStored){
       setAthlete(athleteStored) 
     }
     else{
-      getAthleteAsync(user.strava_data.access_token).then(
+      getAthleteAsync(access_token)
+      .then(
         result => {
-          console.log(result.value)
-          result.ok ? setAthlete(result.value) : setErrorMessage(result.message)
+          console.log(result.value) 
+          if (result.ok) {
+            setAthlete(result.value as Athlete)
+          } else {
+            setErrorMessage(result.message)
+          }
         }
-      )
+      ).catch(error => {
+        console.log(error)
+        setErrorMessage(error.message)
+      })
     }
-  }, [user, athleteStored])
+  }, [access_token, athleteStored])
 
   return {athlete, error: errorMessage}
 }
