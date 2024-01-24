@@ -1,4 +1,4 @@
-import { GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import { GridCellParams, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import { kmConvert, meterConvert, timeConvert } from '../services/formatService.ts'
 import { getActivitiesAsync } from '../services/stravaService.ts'
 import { useEffect, useState } from 'react';
@@ -30,6 +30,7 @@ export function useActivitiesGrid () {
       field: 'elapsed_time',
       headerName: 'Tiempo',
       headerAlign: 'right', 
+      sortable: false,
       width: 100,
       align: 'right',
       valueGetter: (params: GridValueGetterParams) =>
@@ -38,7 +39,8 @@ export function useActivitiesGrid () {
     {
       field: 'moving_time',
       headerName: 'En movimiento',
-      headerAlign: 'right', 
+      headerAlign: 'right',
+      sortable: false, 
       width: 110,
       align: 'right',
       valueGetter: (params: GridValueGetterParams) =>

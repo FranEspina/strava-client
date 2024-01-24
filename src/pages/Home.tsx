@@ -68,8 +68,8 @@ export function Home () {
         {!isUserLogged && <Button variant="contained" color="error" component={Link} to="/login" sx={{mt: 5}}>inicio sesión</Button>}
         {isUserLogged &&
           <>
-            <Typography variant="h4" textAlign="center"  width="100%">
-              Bienvenido {firstname}
+            <Typography variant="h5" textAlign="center"  width="100%">
+              Bienvenido <strong>{firstname}</strong>
             </Typography>
             <LoggedOptions sx={{mt: 5}} />
           </> 
