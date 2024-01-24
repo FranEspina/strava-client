@@ -6,7 +6,7 @@ import { getActivityAsync } from "../services/stravaService.ts";
 
 export function useActivity (id: string) {
   
-  const [activity, setActivity] = useState<StravaActivity>(null)
+  const [activity, setActivity] = useState<StravaActivity>()
   const [errorMessage, setErrorMessage] = useState<string>('')
   const access_token = useStravaStore(state => state.user?.strava_data.access_token)
   const navigate = useNavigate()

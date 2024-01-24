@@ -1,6 +1,6 @@
 import { create } from "zustand"
 import { Athlete } from "../models/AthleteModel.ts"
-import { User } from '../models/UserModel.ts'
+import { StravaData, User } from '../models/UserModel.ts'
 import { persist, devtools } from 'zustand/middleware'
 import { deauthorizeStravaAsync } from "../services/stravaService.ts"
 interface AppState {
@@ -16,7 +16,7 @@ interface AppState {
   storeUser: (user: User) => void
   logOut: () => void, 
   isAccessTokenExpired: () => boolean
-  storeRefreshToken: (strava_data) => void
+  storeRefreshToken: (strava_data: StravaData) => void
   deauthorizeStravaAccess: () => void
 }
 
@@ -26,6 +26,7 @@ export const useStravaStore = create<AppState>()(
     return {
       token: '', 
       user: undefined, 
+      isUserLogged: false, 
       athlete: {id: 0}, 
       showStatusFooter: false, 
       isAsyncTaskLoading: false, 
@@ -45,11 +46,10 @@ export const useStravaStore = create<AppState>()(
       isAccessTokenExpired: () => {
         const token_expires_at = get().user?.strava_data.expires_at
         if (!token_expires_at) return false
-        
-        const currenttime = new Date() / 1000
+        const currenttime = new Date().getTime()/ 1000
         return token_expires_at < currenttime
       }, 
-      storeRefreshToken: (strava_data) => {
+      storeRefreshToken: (strava_data: StravaData) => {
         const newUser = structuredClone(get().user)
         if (newUser) {
           console.log(strava_data)
@@ -75,7 +75,7 @@ export const useStravaStore = create<AppState>()(
             get().logOut()
           } else{
             console.log(response.message)
-          }s
+          }
         })
         .catch(error => console.log(error))
         .finally(() => get().storeIsAsyncTaskLoading(false))

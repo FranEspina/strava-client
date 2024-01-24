@@ -1,10 +1,15 @@
-import { Button } from "@mui/material";
+import { Button, SxProps } from "@mui/material";
 import { refreshUserFromStravaAsync } from "../services/apiService.ts";
 import { useStravaStore } from "../store/strava.ts";
 import { useNavigate } from "react-router-dom";
 
 
-export function RefreshTokenButton (props) {
+interface LoggedOptionsProps {
+  sx?: SxProps
+  variant: any
+}
+
+export function RefreshTokenButton (props: LoggedOptionsProps) {
   
   const storeRefreshToken = useStravaStore(state => state.storeRefreshToken)
   const strava_id = useStravaStore(state => state.user?.strava_id)

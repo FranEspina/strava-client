@@ -1,6 +1,6 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useStravaStore } from "../store/strava.ts";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { createUserFromStravaAsync } from "../services/apiService.ts";
 import './StravaRegister.css'
 import { Loading } from "../components/Loading.tsx";

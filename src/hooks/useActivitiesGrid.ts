@@ -1,4 +1,4 @@
-import { GridCellParams, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import { GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import { kmConvert, meterConvert, timeConvert } from '../services/formatService.ts'
 import { getActivitiesAsync } from '../services/stravaService.ts'
 import { useEffect, useState } from 'react';
@@ -69,6 +69,10 @@ export function useActivitiesGrid () {
 
       (async () => {
         setLoading(true);
+        if (!access_token){
+          console.log('Se esperaba Token de acceso')
+          return
+        }
         const result = await getActivitiesAsync({tokenStr: access_token, page: paginationModel.page + 1, perPage: paginationModel.pageSize})
         const newRows = result.value
         if (!active) {

@@ -1,8 +1,12 @@
 import { useNavigate } from "react-router-dom"
 import { useStravaStore } from "../store/strava"
-import { Button } from "@mui/material"
+import { Button, SxProps } from "@mui/material"
+interface LoggedOptionsProps {
+  sx?: SxProps
+  variant: any
+}
 
-export function DeauthorizationButton (props) {
+export function DeauthorizationButton (props: LoggedOptionsProps) {
   const deauthorizeStravaAccess = useStravaStore(state => state.deauthorizeStravaAccess )
   const navigate = useNavigate()
   

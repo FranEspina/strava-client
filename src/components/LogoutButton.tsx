@@ -1,8 +1,14 @@
 import { useNavigate } from "react-router-dom"
 import { useStravaStore } from "../store/strava"
-import { Button } from "@mui/material"
+import { Button, SxProps } from "@mui/material"
 
-export function LogoutButton (props) {
+
+interface LoggedOptionsProps {
+  sx?: SxProps
+  variant: any
+}
+
+export function LogoutButton (props: LoggedOptionsProps) {
   const logOut = useStravaStore(state => state.logOut )
   const navigate = useNavigate()
   

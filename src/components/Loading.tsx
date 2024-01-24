@@ -1,11 +1,16 @@
-import { Box, CircularProgress, Hidden } from '@mui/material'
+import { Box, CircularProgress } from '@mui/material'
 import { useStravaStore } from '../store/strava';
-export function Loading (props) {
+
+interface LoadingProps {
+  size?: number
+}
+export function Loading (props: LoadingProps) {
 
   const isAsyncTaskLoading = useStravaStore(state => state.isAsyncTaskLoading)
+  const computedSize = (props.size) ? props.size : 25
   return (
     isAsyncTaskLoading 
-      ? <CircularProgress size={props.size | 25} ></CircularProgress>
-      : <Box sx={{minHeight: props.size | 25, minWidth: props.size | 25, p: 0}} ></Box>
+      ? <CircularProgress size={computedSize} ></CircularProgress>
+      : <Box sx={{minHeight: computedSize, minWidth: computedSize, p: 0}} ></Box>
   )
 }

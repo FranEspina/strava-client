@@ -5,7 +5,8 @@ import { useAthlete } from '../hooks/useAthlete.ts'
 import { DeauthorizationButton } from '../components/DeauthorizationButton.tsx'
 import { useStravaStore } from '../store/strava.ts'
 import { Box } from '@mui/material'
-import { SxProps } from '@mui/system';
+import { SxProps } from '@mui/system'
+
 interface LoggedOptionsProps {
   sx?: SxProps; 
 }
