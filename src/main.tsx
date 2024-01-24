@@ -8,9 +8,13 @@ import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
 
 import { BrowserRouter } from 'react-router-dom'
+import { ThemeProvider } from '@mui/material'
+import { myTheme } from './services/themeService.ts'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
-    <App />
+    <ThemeProvider theme={myTheme}>
+      <App />
+    </ThemeProvider>
   </BrowserRouter>
 )

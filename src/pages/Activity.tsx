@@ -9,7 +9,7 @@ import { kmConvert, meterConvert, timeConvert } from "../services/formatService.
 export function Activity () {
   const { id } = useParams()
 
-  const { activity } = useActivity(id)
+  const { activity } = useActivity(id || '')
   const { athlete } = useAthlete()
 
   console.log(id)
@@ -40,12 +40,12 @@ export function Activity () {
                 <StravaField fieldValue={kmConvert(activity?.distance)} description="Distancia" units="Kms"></StravaField>
                 <StravaField fieldValue={timeConvert(activity?.elapsed_time)} minWidth={100} description="Tiempo en movimiento"></StravaField>
                 <StravaField fieldValue={meterConvert(activity?.total_elevation_gain)} description="Desnivel"></StravaField>
-                <StravaField fieldValue={activity?.suffer_score?.toString()} description="Esfuerzo Relativo"></StravaField>
+                {activity?.suffer_score && <StravaField fieldValue={activity?.suffer_score?.toString()} description="Esfuerzo Relativo" />}
               </Stack>
               <Stack direction="row" gap={2}>  
-                <StravaField fieldValue={activity?.average_watts} description="Potencia promedio ponderada" units="w"></StravaField>
-                <StravaField fieldValue={activity?.kilojoules} description="Trabajo total" units="kj"></StravaField>
-                <StravaField fieldValue={meterConvert(activity?.calories)} description="Calorías"></StravaField>
+                {activity?.average_watts && <StravaField fieldValue={activity?.average_watts?.toString()} description="Potencia promedio ponderada" units="w" />}
+                {activity?.kilojoules && <StravaField fieldValue={activity?.kilojoules.toString()} description="Trabajo total" units="kj" />}
+                {activity?.calories && <StravaField fieldValue={meterConvert(activity?.calories)} description="Calorías" />}
               </Stack>
             </Box>
           </Box>

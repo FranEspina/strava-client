@@ -50,6 +50,7 @@ export interface StravaActivity {
   total_photo_count?:      number;
   has_kudoed?:             boolean;
   suffer_score?:           number;
+  calories?:               number;
 }
 
 export interface AthleteId {

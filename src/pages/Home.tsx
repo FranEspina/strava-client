@@ -18,17 +18,18 @@ export function Home () {
   const storeRefreshToken = useStravaStore(state => state.storeRefreshToken)
   const isAccessTokenExpired = useStravaStore(state => state.isAccessTokenExpired)
 
-  console.log('dentro home')
   useEffect(() => {
-    console.log('dentro use effect')
     if (isUserLogged) {
+
+      if (!strava_id || !refresh_token){
+        console.log('Se esperaba un identificador de Strava y un Token de refresco')
+        return navigate("/error")
+      }
+
       if (isAccessTokenExpired()){
-        console.log('token expirado')
-        console.log(`antes llamada refreshUserFromStravaAsync('${strava_id}', '${refresh_token}')`)
         refreshUserFromStravaAsync(strava_id, refresh_token)
         .then(response => {          
           storeRefreshToken(response)
-          console.log('token refrescado')
         })
         .catch(error => {
           console.log('Error refrescando token')

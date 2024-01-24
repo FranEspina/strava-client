@@ -47,7 +47,6 @@ export const useStravaStore = create<AppState>()(
         if (!token_expires_at) return false
         
         const currenttime = new Date() / 1000
-        console.log(`comparando expire ${token_expires_at} con ahora ${currenttime}`)
         return token_expires_at < currenttime
       }, 
       storeRefreshToken: (strava_data) => {
