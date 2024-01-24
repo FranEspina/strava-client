@@ -2,6 +2,7 @@ export interface StravaActivity {
   resource_state?:         number;
   athlete?:                AthleteId;
   name?:                   string;
+  description?:            string;
   distance?:               number;
   moving_time?:            number;
   elapsed_time?:           number;

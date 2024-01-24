@@ -19,7 +19,6 @@ export function useActivities () : returnUseActivities {
   const [errorMessage, setErrorMessage] = useState<string>('')
 
   const isUserLogged = useStravaStore(state => state.isUserLogged)
-  const user = useStravaStore(state => state.user)
   const access_token = useStravaStore(state => state.user?.strava_data.access_token)
   const pageSize = useStravaStore(state => state.pageSize)
 
