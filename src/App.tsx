@@ -28,7 +28,7 @@ function App() {
           <Route path="error" Component={Error} /> 
           <Route path="*" Component={NotFound} />
         </Route>
-        <Route path="/strava" Component={StravaRegister}/>
+        <Route path="/strava" element={<StravaRegister />}/>
       </Routes>
     </>
   )
