@@ -8,9 +8,9 @@ export function NavBar() {
   const isUserLogged = useStravaStore(state => state.isUserLogged)
   return <>
     <div className="navbar">
-      <Button component={Link} to="/">Inicio</Button>
-      <Button component={Link} to="/activities">Actividades</Button>
-      {!isUserLogged && <Button component={Link} to="/login">inicio sesión</Button>}
+      <Button component={Link}  color="error"  to="/">Inicio</Button>
+      {isUserLogged && <Button component={Link}  color="error" to="/activities">Actividades</Button>}
+      {!isUserLogged && <Button component={Link}  color="error"  to="/login">inicio sesión</Button>}
     </div>
   </>
 }
