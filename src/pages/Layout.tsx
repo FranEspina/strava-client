@@ -2,22 +2,16 @@ import './Layout.css'
 import { Outlet } from "react-router-dom"
 import { FooterLogStore } from "../components/FooterLogStore.tsx"
 import { useStravaStore } from '../store/strava.ts';
-import { ThemeProvider, createTheme } from '@mui/material';
+import { ThemeProvider } from '@mui/material';
+import { myTheme } from '../services/themeService.ts';
 
 export const Layout = () => {
   
   const show = useStravaStore(state => state.showStatusFooter)  
 
-  const theme = createTheme({
-    palette: {
-      mode: 'dark',
-    },
-  });
-  
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={myTheme}>
       <main className="main-layout">
-        <header></header>
         <main className='page-layout'>
           <Outlet />
         </main>
