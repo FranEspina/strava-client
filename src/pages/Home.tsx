@@ -44,21 +44,21 @@ export function Home () {
   return (
     <>
       <Box component="hgroup" display="flex" flexDirection="column" alignItems="center" gap={1}>
-        <Stack direction="row" gap={2} justifyContent="center" alignItems="center">
+        <Stack direction="row" gap={2} justifyContent="center" alignItems="center" sx={{'@media screen and (max-width:700px)': { flexDirection: 'column'} }}>
           <LogoStrava size={90}></LogoStrava>
-          <Typography variant='h1'>Mui Strava</Typography>
+          <Typography variant='h1' sx={{'@media screen and (max-width:700px)': { fontSize: '3em'} }}>Mui Strava</Typography>
         </Stack>
-        <Typography variant="h4" textAlign="center" width="100%">
+        <Typography variant="h4" textAlign="center" width="100%" sx={{'@media screen and (max-width:700px)': { fontSize: '1.75em', marginX: '10px' } }}>
           Revisa tus actividades de Strava
         </Typography>
 
         <Stack  direction="column" gap={3} alignItems="center" justifyContent="center" width={500} marginTop={5}>
           {!isUserLogged &&
              <>
-              <Typography variant="body1" textAlign="start"  width="100%">
+              <Typography variant="body1" textAlign="start"  width="100%" sx={{'@media screen and (max-width:700px)': { fontSize: '1em', width: '60%', textAlign: 'center'} }}>
                 Usa <strong>zustand</strong> para el estado global, backend <strong>express</strong> para authorización y <strong>MongoDb</strong> en la nube para almacenar datos del usuario. 
               </Typography>
-              <Typography variant="body1" textAlign="start"  width="100%">
+              <Typography variant="body1" textAlign="start"  width="100%" sx={{'@media screen and (max-width:700px)': { fontSize: '1em', width: '60%', textAlign: 'center'} }}>
                 Frontend está realizado en <strong>React</strong> con <strong>TypeScript</strong> usando algunos componentes <strong>MUI material</strong>.
               </Typography>
              </> 
@@ -69,7 +69,7 @@ export function Home () {
         {isUserLogged &&
           <>
             <Typography variant="h5" textAlign="center"  width="100%">
-              Bienvenido <strong>{firstname}</strong>
+              Bienvenido
             </Typography>
             <LoggedOptions sx={{mt: 5}} />
           </> 

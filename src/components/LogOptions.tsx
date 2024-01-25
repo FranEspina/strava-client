@@ -19,7 +19,8 @@ export function LoggedOptions (props: LoggedOptionsProps) {
     <Box sx={{...props.sx}}>
       {isUserLogged && <AthleteInfo value={athlete} /> }
       <Box component="div" sx={{display: 'flex', flexDirection: 'row', mt: 3, 
-      justifyContent: 'center', alignItems: 'center', gap: 1}}>
+      justifyContent: 'center', alignItems: 'center', gap: 1, 
+      '@media screen and (max-width:700px)': { flexDirection: 'column', mb: 10} }}>
         {isUserLogged && <LogoutButton variant="outlined" sx={{minWidth: 200}} />}
         {isUserLogged && <RefreshTokenButton variant="outlined" sx={{minWidth: 200}}  />}
         {isUserLogged && <DeauthorizationButton variant="outlined" sx={{minWidth: 200}}  />}
