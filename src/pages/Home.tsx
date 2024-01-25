@@ -11,7 +11,6 @@ import { LogoStrava } from '../components/LogoStrava.tsx'
 export function Home () {
 
   const isUserLogged = useStravaStore(state => state.isUserLogged )
-  const firstname = useStravaStore(state => state.user?.firstname)
   const navigate = useNavigate()
   const strava_id = useStravaStore(state => state.user?.strava_id)
   const refresh_token = useStravaStore(state => state.user?.strava_data.refresh_token)
